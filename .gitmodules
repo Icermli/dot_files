@@ -1,0 +1,12 @@
+[submodule "gitignore"]
+	path = gitignore
+	url = git@github.com:github/gitignore
+[submodule "gdb-dashboard"]
+	path = gdb-dashboard
+	url = https://github.com/cyrus-and/gdb-dashboard
+[submodule ".tmux/plugins/tpm"]
+	path = .tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm.git
+[submodule "bash-insulter"]
+	path = cli-utils/bash-insulter
+	url = git@github.com:hkbakke/bash-insulter.git

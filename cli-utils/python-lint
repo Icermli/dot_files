@@ -1,0 +1,5 @@
+#!/bin/bash
+
+source activate python-lint
+echo $CONDA_DEFAULT_ENV
+prospector .

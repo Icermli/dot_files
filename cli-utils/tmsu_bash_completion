@@ -1,0 +1,60 @@
+# This function checks whether we have a given program on the system.
+# No need for bulky functions in memory if we don't.
+#
+have()
+{
+    unset -v have
+    # Completions for system administrator commands are installed as well in
+    # case completion is attempted via `sudo command ...'.
+    PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin type $1 &>/dev/null &&
+    have="yes"
+}
+
+have tmsu &&
+_tmsu()
+{
+    local cur prev
+
+    COMPREPLY=()
+    cur=${COMP_WORDS[COMP_CWORD]}
+    prev=${COMP_WORDS[COMP_CWORD-1]}
+    prev_prev=${COMP_WORDS[COMP_CWORD-2]}
+
+    if [ "$COMP_CWORD" -eq 1 ]; then
+        COMPREPLY=( $(compgen -W "config copy delete dupes files help imply init merge mount rename repair stats status tag tags unmount untag untagged values version vfs" -- ${cur}) );
+        return 0
+    elif [ "$COMP_CWORD" = "2" ]; then
+        _filedir
+        return 0
+    else
+        case "${COMP_WORDS[1]}" in
+        tag)
+            if [ "$cur" = "=" ]; then
+                COMPREPLY=( $(compgen -W "$(tmsu values ${prev} 2> /dev/null)" -- "") )
+            elif [ "$prev" = "=" ]; then
+                COMPREPLY=( $(compgen -W "$(tmsu values ${prev_prev})" -- $cur) )
+            else
+                COMPREPLY=( $(compgen -W "$(tags)" -- $cur) )
+            fi
+            return 0
+            ;;
+        esac
+    fi
+
+}
+
+function tags()
+{
+    # Select all tag/value pairs for the completion.
+    # NOTE: there is no tag/value association without it being applied to a file.
+    # So some values don't show up because there's no file for them yet (or anymore).
+    local TAG_VALUE_QUERY='SELECT DISTINCT tag.name || "=" || value.name FROM file_tag JOIN tag ON tag_id=tag.id JOIN value ON value_id=value.id;';
+    echo $(sqlite3 "$HOME/Nextcloud/.tmsu/db" "$TAG_VALUE_QUERY")
+
+    # Select the remaining tags (i.e. all tags without any value associated with them)
+    # (we don't want to offer a "value tag" again in its empty form)
+    local STANDALONE_TAGS='SELECT DISTINCT name FROM tag LEFT OUTER JOIN file_tag ON tag_id=id WHERE (value_id IS NULL) OR (value_id IS 0);'
+    echo $(sqlite3 "$HOME/Nextcloud/.tmsu/db" "$STANDALONE_TAGS")
+};
+
+complete -F _tmsu tmsu

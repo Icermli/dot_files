@@ -1,0 +1,12 @@
+#!/bin/sh
+# Clear pyopencl cache files
+
+echo "Clearing PyOpenCL cache ..."
+rm -Rf ~/.pocl
+rm -Rf ~/.cache/pocl
+rm -Rf ~/.cache/pytools
+rm -Rf ~/.cache/pyopencl/
+rm -Rf ~/.nv/ComputeCache/
+rm -Rf ~/._occa
+echo "Done."
+

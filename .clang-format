@@ -1,0 +1,25 @@
+BasedOnStyle: Google
+
+AlignEscapedNewlinesLeft: true
+AlignTrailingComments: true
+AlignConsecutiveAssignments: true
+AlignConsecutiveDeclarations: true
+AllowAllParametersOfDeclarationOnNextLine: true
+
+ColumnLimit: 80
+
+# FixNamespaceComments: true
+
+KeepEmptyLinesAtTheStartOfBlocks: true
+MaxEmptyLinesToKeep: 2
+
+ReflowComments: true
+SortIncludes: true
+
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeParens: ControlStatements
+SpacesBeforeTrailingComments: 4
+
+Standard: Auto
+
+UseTab: Never

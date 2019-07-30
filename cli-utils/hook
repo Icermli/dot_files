@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ssh -Y -p 2222 xywei@localhost

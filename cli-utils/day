@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Set iterm colorscheme
+
+echo -ne "\033]50;SetProfile=daytime\a"
+source promptline_light
+clear

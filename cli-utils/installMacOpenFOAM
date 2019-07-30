@@ -1,0 +1,69 @@
+#----------------------------------*-sh-*--------------------------------------
+# =========                 |
+# \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+#  \\    /   O peration     |
+#   \\  /    A nd           | Copyright (C) 2016-2017 OpenCFD Ltd. 
+#    \\/     M anipulation  |
+#------------------------------------------------------------------------------
+# License
+#     This file is part of OpenFOAM.
+#
+#     OpenFOAM is free software: you can redistribute it and/or modify it
+#     under the terms of the GNU General Public License as published by
+#     the Free Software Foundation, either version 3 of the License, or
+#     (at your option) any later version.
+#
+#     OpenFOAM is distributed in the hope that it will be useful, but WITHOUT
+#     ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+#     FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+#     for more details.
+#
+#     You should have received a copy of the GNU General Public License
+#     along with OpenFOAM.  If not, see <http://www.gnu.org/licenses/>.
+#
+# File
+#     installMacOpenFOAM
+#
+# Description
+#     this script os for native build of DOCKER on MAC-OSX
+#     1) Pull OpenFOAM-v1706 from docker hub if it does not exist in local
+#        environment 
+#     2) Create a container with the name of_v1706
+#     3) To login as root
+#          *  Root: to login as root run command "su root"
+#          password: ofuser2017
+#
+# NOTE:
+#     This script should be placed in home area
+#     To post-process, please install Paraview on your MAC
+#
+#------------------------------------------------------------------------------
+
+username="$USER"
+user="$(id -u)"
+home="${1:-$HOME}"
+
+imageName="openfoamplus/of_v1706_centos73"
+containerName="of_v1706"
+displayVar="$DISPLAY"
+
+# List container in docker environment
+echo "*********************************************************"
+echo "List of Container in docker environment:"
+echo "*********************************************************"
+docker ps -a 
+echo "**************************************** "
+echo "			"
+echo "Creating Docker OpenFOAM container ${containerName}"
+
+# Create docker container with OpenFOAM environment
+docker run  -it -d --name ${containerName}                  \
+    --workdir="/home/ofuser"                                \
+    -v="${home}":/home/ofuser/workingDir                    \
+    ${imageName} su ofuser
+
+echo "Container ${containerName} was created."
+
+echo "*********************************************************"
+echo "Run the ./startMacOpenFoam  script to launch container"
+echo "*********************************************************"

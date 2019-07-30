@@ -1,0 +1,36 @@
+[user]
+        email = haohan@excelsia.io
+        name = Icermli
+        signingkey = 331668lhh
+[push]
+        default = simple
+[alias]
+        mylog = log --pretty=format:'%h %s [%an]' --graph
+        lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
+        br = branch
+        ds = diff --staged
+        wd = diff --word-diff --ignore-all-space
+        wds = diff --staged --word-diff --ignore-all-space
+        difftex = difftool -y -t latex
+        lg = log --oneline --reverse
+        dls = diff-tree --no-commit-id --name-status -r
+        st = status
+        co = checkout
+        br = branch
+        ci = commit
+        getroot = !pwd
+        beholdmyamazingcode = commit
+[credential]
+        helper = cache --timeout=3600
+[difftool.latex]
+        cmd = latexdiff "$LOCAL" "$REMOTE"
+[core]
+        excludesfile = ~/.gitignore_global
+        editor = $(which nvim)
+[gpg]
+        program = gpg2
+[commit]
+        gpgsign = false
+
+[color]
+	ui = auto

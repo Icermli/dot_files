@@ -1,0 +1,15 @@
+{
+  "linewrap": 80,
+  "default_hour": 9,
+  "editor": "vim",
+  "highlight": true,
+  "default_minute": 0,
+  "timeformat": "%Y-%m-%d %H:%M",
+  "journals": {
+    "life": "~//Nextcloud//Journals//life.txt",
+    "work": "~//Nextcloud//Journals//work.txt",
+    "others": "~//Nextcloud//Journals//others.txt"
+  },
+  "tagsymbols": "@",
+  "encrypt": false
+}

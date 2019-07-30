@@ -1,0 +1,41 @@
+#----------------------------------*-sh-*--------------------------------------
+# =========                 |
+# \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+#  \\    /   O peration     |
+#   \\  /    A nd           | 
+#    \\/     M anipulation  | Copyright (C) 2016-2017 OpenCFD Ltd.
+#------------------------------------------------------------------------------
+# License
+#     This file is part of OpenFOAM.
+#
+#     OpenFOAM is free software: you can redistribute it and/or modify it
+#     under the terms of the GNU General Public License as published by
+#     the Free Software Foundation, either version 3 of the License, or
+#     (at your option) any later version.
+#
+#     OpenFOAM is distributed in the hope that it will be useful, but WITHOUT
+#     ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+#     FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+#     for more details.
+#
+#     You should have received a copy of the GNU General Public License
+#     along with OpenFOAM.  If not, see <http://www.gnu.org/licenses/>.
+#
+# File
+#     installMacOpenFOAM
+#
+# Description
+#     1) Start OpenFOAM container with name 'of_v1706'
+#     2) To login as root
+#          * Root: to login as root run command "su root"
+#           password: ofuser2017
+#
+# NOTE:
+#     This script should be placed in the home area 
+#
+#     To post-process, please install Paraview for your MAC seprately
+#
+#------------------------------------------------------------------------------
+
+docker start  of_v1706
+docker attach of_v1706

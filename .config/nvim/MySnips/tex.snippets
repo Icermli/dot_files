@@ -1,0 +1,405 @@
+priority 1
+
+##################################################
+# Math symbols
+##################################################
+snippet m "Inline math"
+$ $1 $ $0
+endsnippet
+
+snippet tt "Text within math env"
+\text{ $1 } $0
+endsnippet
+
+snippet tld "Tilde"
+\tilde{ $1 } $0
+endsnippet
+
+snippet max "Max"
+\max_{ $1 } $0
+endsnippet
+
+snippet min "Min"
+\min_{ $1 } $0
+endsnippet
+
+snippet inf "Infinity"
+\infty $0
+endsnippet
+
+snippet frac "fractional" 
+\frac{ $1 }{ $2 } $0
+endsnippet
+
+snippet _ "Long Subscript"
+_{ $1 } $0
+endsnippet
+
+snippet ^ "Long Superscript"
+^{ $1 } $0
+endsnippet
+
+snippet p "partial derivative" 
+\frac{\partial $1 }{\partial $2 } $0
+endsnippet
+
+snippet partial "Single partial"
+\partial $0
+endsnippet
+
+snippet bf "Bold"
+\mathbf{ $1 } $0
+endsnippet
+
+snippet bb "Blackboard bold"
+\mathbb{ $1 } $0
+endsnippet
+
+snippet cal "Caligraphical font"
+\mathcal{ $1 } $0
+endsnippet
+
+snippet scr "Script font"
+\mathscr{ $1 } $0
+endsnippet
+
+snippet sq "Square root"
+\sqrt{ $1 } $0
+endsnippet
+
+snippet d "derivative" 
+\frac{d $1 }{d $2 } $0
+endsnippet
+
+snippet ~ "Sim"
+\sim $0
+endsnippet
+
+snippet \ "Set minus"
+\setminus $0
+endsnippet
+
+snippet << "Far less than"
+\ll $0
+endsnippet
+
+snippet >> "Far greater than"
+\gg $0
+endsnippet
+
+snippet =/ "Not equal to"
+\neq
+endsnippet
+
+snippet /= "Not equal to"
+\neq
+endsnippet
+
+snippet <= "Less than or equal to"
+\leq $0
+endsnippet
+
+snippet >= "Greater than or equal to"
+\geq $0
+endsnippet
+
+snippet oc "Proportional to"
+\propto
+endsnippet
+
+snippet -> "Right arrow" 
+\rightarrow $0
+endsnippet
+
+snippet --> "Long Right arrow" 
+\longrightarrow $0
+endsnippet
+
+snippet <- "Left arrow"
+\leftarrow $0
+endsnippet
+
+snippet <-- "Long Left arrow"
+\longleftarrow $0
+endsnippet
+
+snippet div "divergence" 
+\nabla \cdot $0
+endsnippet
+
+snippet s "Square root"
+\sqrt{ $1 } $0
+endsnippet
+
+snippet q "Space"
+\quad $0
+endsnippet
+
+snippet int "Intrgral"
+\int_{ $1 }^{ $2 } $3 d $4 $0
+endsnippet
+
+snippet sum "Summation"
+\sum_{ $1 }^{ $2 } $0
+endsnippet
+
+snippet vec "vector" 
+\overrightarrow{ $1 } $0
+endsnippet
+
+snippet tensor "Tensor"
+\overleftrightarrow{ $1 } $0
+endsnippet
+
+snippet hat "\hat" 
+\hat { $1 } $0
+endsnippet
+
+snippet what "Wide hat"
+\widehat { $1 } $0
+endsnippet
+
+snippet dot "\dot"
+\dot{$1} $0
+endsnippet
+
+snippet . "Dot product"
+\cdot $0
+endsnippet
+
+snippet star "star"
+^\star $0
+endsnippet
+
+snippet all "For all"
+\forall $0
+endsnippet
+
+snippet in "In"
+\in $0
+endsnippet
+
+snippet grad "Gradient" 
+\nabla $0
+endsnippet
+
+snippet seq "sequence of stuff" 
+$1_1, $1_2, \dots, $1_$2 $0
+endsnippet
+
+snippet ( "Big brackets"
+\left( $1 \right) $0
+endsnippet
+
+snippet [ "Big square brackets" 
+\left[ $1 \right] $0
+endsnippet
+
+snippet { "Big curly brackets" 
+\left\\{ $1 \right\\} $0
+endsnippet
+
+snippet < "Big <>"
+\left< $1 \right> $0
+endsnippet
+
+snippet mat "Matrix"
+\begin{matrix}
+$1
+\end{matrix}
+$0
+endsnippet
+
+snippet mat( "Matrix surrounded by parentheses"
+\begin{pmatrix}
+$1
+\end{pmatrix}
+$0
+endsnippet
+
+snippet mat[ "Matrix surrounded by square brackets"
+\begin{bmatrix}
+$1
+\end{bmatrix}
+$0
+endsnippet
+
+snippet mat| "Matrix surrounded by single vertical lines"
+\begin{vmatrix}
+$1
+\end{vmatrix}
+$0
+endsnippet
+
+snippet mat|| "Matrix surrounded by double vetival lines"
+\begin{Vmatrix}
+$1
+\end{Vmatrix}
+$0
+endsnippet
+
+##################################################
+# Equation 
+##################################################
+snippet eq "equation" b
+\begin{equation}\label{eqn:$1}
+$0
+\end{equation}
+endsnippet
+
+snippet sp "Split" b
+\begin{split}
+$1
+\end{split}
+$0
+endsnippet
+
+snippet eq* "un-numbered equation" b
+\begin{equation*}
+$0
+\end{equation*}
+endsnippet
+
+snippet al "align" b
+\begin{align}
+$2 & = $3 \\\\
+$4 & = $5
+\end{align}
+$0
+endsnippet
+
+snippet al* "un-numbered align" b
+\begin{align*}
+$2 & = $3 \\\\
+$4 & = $5
+\end{align*}
+$0
+endsnippet
+
+snippet name "Equation name"
+\tag{$1} $0
+endsnippet
+
+##################################################
+# Label
+##################################################
+snippet lab "label" 
+\label{$1} $0
+endsnippet
+
+snippet leqn "label for equations" 
+\label{eqn:${1}} $0
+endsnippet
+
+snippet lfig "label for figures" 
+\label{fig:${1}} $0
+endsnippet
+
+snippet ltab "label for tables" 
+\label{tab:${1}} $0
+endsnippet
+
+snippet lthm "label for theorems"
+\label{thm:$1} $0
+endsnippet
+
+snippet lrmk "label for remarks"
+\label{rmk:$1} $0
+endsnippet
+
+snippet lsec "label for sections" 
+\label{sec:$1} $0
+endsnippet
+
+##################################################
+# Lists
+##################################################
+snippet i "Item" b
+\item $0
+endsnippet
+
+##################################################
+# References
+##################################################
+snippet bib "Add bibliography" b
+\bibliography{${1}}
+\bibliographystyle{${2:plain}}
+$0
+endsnippet
+
+snippet cite "Citation"
+\cite{${1}} $0
+endsnippet
+
+snippet ref "Reference" 
+(\ref{$1}) $0
+endsnippet
+
+snippet cref "Clever ref"
+\cref{$1} $0
+endsnippet
+
+snippet crefrange "Clever ref range"
+\crefrange{$1}{$2} $0
+endsnippet
+
+##################################################
+# Structure
+##################################################
+snippet sec "New section" b
+\section{$1}
+$0
+endsnippet
+
+snippet ssec "New subsection" b
+\subsection{$1}
+$0
+endsnippet
+
+snippet sssec "New subsubsection" b
+\subsubsection{$1}
+$0
+endsnippet
+
+snippet begin "Environment" b
+\begin{$1}
+$0
+\end{$1}
+endsnippet
+
+snippet {{{ "Fold" b
+% {{{ $1
+$0
+% }}} End $1
+endsnippet
+
+##################################################
+# TikZ
+##################################################
+snippet circle "Circle in tikz" b
+\draw ( ${1:0}, ${2:0} ) circle ( ${3:3cm} );
+$0
+endsnippet
+
+snippet arc "Arc in tikz" b
+\draw ( ${1:0}, ${2:0} ) arc ( ${3:0} : ${4:90} : ${5:3cm} );
+$0
+endsnippet
+
+
+##################################################
+# Beamer
+##################################################
+snippet frame "Frame" b
+\begin{frame}
+  \frametitle{$1}
+  $2
+\end{frame}
+$0
+endsnippet
+
+snippet {{{ "Fold" b
+% {{{ $1
+$0
+% }}} End $1
+endsnippet

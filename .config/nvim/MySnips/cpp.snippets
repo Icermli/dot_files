@@ -1,0 +1,275 @@
+
+##################################################
+# File
+##################################################
+snippet header "File header" b
+/**
+ *  \file      `!p snip.rv = fn`
+ *  \brief     ${1:A brief file description}.
+ *  \details   ${2:A detailed file description}.
+ *  \date      Created on `!v strftime("%Y-%m-%d")`.
+ *  \author    Xiaoyu Wei (xywei@github)
+ */
+$0
+endsnippet
+
+snippet include "Add header file" b
+#include <$1>
+$0
+endsnippet
+
+snippet guard "Include guard" b
+#ifndef ${1:NAME}
+#define $1
+$0
+#endif
+endsnippet
+
+snippet namespace "Namespace" b
+namespace ${1:space_name} {
+  $0
+} // End of namespace $1
+endsnippet
+
+##################################################
+# Class
+##################################################
+snippet class "Documented class" b
+/**
+ *  \class     ${1:ClassName}
+ *  \brief     ${2:A Class}.
+ *  \details   ${3:A Class}.
+ *  \date      Created on `!v strftime("%Y-%m-%d")`.
+ *  \author    Xiaoyu Wei (xywei@github)
+ */
+class $1 { $0 };
+endsnippet
+
+##################################################
+# Function
+##################################################
+snippet func "Class function declaration" b
+/**
+ *  \fn        $1
+ *  \brief     ${2:A fuction}.
+ *  \param     ${3:arg1 an arguement}.
+ *  \exception ${4:std::out_of_range paramter out of range}.
+ *  \return    ${5:a double number}.
+ *  \date      Created on `!v strftime("%Y-%m-%d")`.
+ *  \author    Xiaoyu Wei (xywei@github)
+ */
+${1:Function declaration} {
+  $0
+}
+endsnippet
+
+
+snippet for "For loop" b
+for (unsigned int ${1:i}=${2:0}; $1 ${3:<} ${4:10}; ++$1) {
+  $0
+}
+endsnippet
+
+##################################################
+# Macro
+##################################################
+snippet define "Documented define" b
+/**
+ *  \def ${1:DefName}
+ *  ${2:Def Description}.
+ */
+#define $1 $0
+endsnippet
+
+##################################################
+# Doxygen
+##################################################
+
+snippet mainpage "Main page/index.html" b
+/**
+ *  \mainpage ${1:Main Page Title}
+ *  $0
+ */
+endsnippet
+
+snippet page "A standalone page" b
+/**
+ *  \page ${1:page_label} ${2:PageTitle}
+ *  \tableofcontents
+ *  ${3:Leading text}.
+ *  $0
+ */
+endsnippet
+
+snippet sec "Section"
+\section ${1:sec_label} ${2:SectionTitle}
+$0
+endsnippet
+
+snippet ssec "Subsection"
+\subsection ${1:subsec_label} ${2:SubsectionTitle}
+$0
+endsnippet
+
+snippet doxy "Doxygen comment block" b
+/**
+ *  $1
+ */
+$0
+endsnippet
+
+snippet code "Code block"
+\code{${1:.cpp}}
+*  ${2:Code Snippet}
+*  \endcode $0
+endsnippet
+
+snippet dot "Dot graph"
+\dot
+*  ${2:DotGraph}
+*  \enddot
+endsnippet
+
+snippet dox "Doxygen inline doc"
+/** $1 */ $0
+endsnippet
+
+snippet math "Doxygen inline math"
+\f$ $1 \f$ $0
+endsnippet
+
+snippet equation "Doxygen equations"
+\f[
+*  $1
+*  \f] $0
+endsnippet
+
+snippet at "Attention"
+\attention $0
+endsnippet
+
+snippet au "Author"
+\author $0
+endsnippet
+
+snippet br "Brief"
+\brief $0
+endsnippet
+
+snippet sa "See/See also"
+\sa $0
+endsnippet
+
+snippet todo "Todo"
+\todo
+endsnippet
+
+snippet ^ "Superscript"
+^{  $1 } $0
+endsnippet
+
+snippet _ "Subscript"
+_{ $1} $0
+endsnippet
+
+snippet frac "Fraction"
+\frac{ $1 }{ $2 } $0
+endsnippet
+
+snippet sqrt "Sqrt"
+\sqrt[ $1 ]{ $2 } $0
+endsnippet
+
+snippet sum "Summation"
+\sum_{ $1 }^{ $2 } $0
+endsnippet
+
+snippet int "Integral"
+\int_{ $1 }^{ $2 } $3 d $0
+endsnippet
+
+snippet pi "pi"
+\pi $0
+endsnippet
+
+snippet Pi "Pi"
+\Pi $0
+endsnippet
+
+
+##################################################
+# Catch Test Framework
+##################################################
+
+snippet catch "Add Catch" b
+#define CATCH_CONFIG_MAIN
+#include "${1:include/catch.hpp}"
+$0
+endsnippet
+
+snippet test "Add test case" b
+TEST_CASE( "${1:Test Name}", "[${2:Tag}]") {
+  $0
+}
+endsnippet
+
+snippet tsec "Section " b
+SECTION( "${1:Brief}" ) {
+  $0
+}
+endsnippet
+
+snippet req "Require" b
+REQUIRE( $0 );
+endsnippet
+
+snippet scen "Scenario" b
+SCENARIO( "${1:Test Name and description}", "[${2:Tag}]" ) {
+  $0
+}
+endsnippet
+
+snippet given "Given statement" b
+GIVEN( "${1:Condition brief}" ) {
+  $0
+}
+endsnippet
+
+snippet when "When statement" b
+WHEN( "${1:What happens}" ) {
+  $0
+}
+endsnippet
+
+snippet then "Then statement" b
+THEN( "${1:What is expected}" ) {
+  $0
+}
+endsnippet
+
+snippet mit "Copyright info with MIT license" b
+/* ---------------------------------------------------------------------
+**
+** Copyright (C) 2017 Xiaoyu Wei
+**
+** Permission is hereby granted, free of charge, to any person obtaining a copy
+** of this software and associated documentation files (the "Software"), to deal
+** in the Software without restriction, including without limitation the rights
+** to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+** copies of the Software, and to permit persons to whom the Software is
+** furnished to do so, subject to the following conditions:
+** 
+** The above copyright notice and this permission notice shall be included in
+** all copies or substantial portions of the Software.
+** 
+** THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+** IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+** FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+** AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+** LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+** OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+** THE SOFTWARE.
+**
+** -------------------------------------------------------------------*/
+
+endsnippet
